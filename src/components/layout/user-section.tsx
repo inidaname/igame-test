@@ -6,7 +6,9 @@ import { UserContext } from "@/provider";
 import JoinGame from "../join-game";
 
 const UserSection: React.FC = () => {
-  const { user } = useContext(UserContext);
+  const {
+    userData: { user },
+  } = useContext(UserContext);
 
   return (
     <section className="flex flex-col justify-center items-center w-full flex-1 space-y-8">

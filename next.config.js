@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   env: getEnvConfig(),
+  output: 'export',
 };
 
 function getEnvConfig() {
