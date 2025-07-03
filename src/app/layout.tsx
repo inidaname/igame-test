@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import AuthCheck from "@/components/auth-check";
 
 import "./globals.css";
+import { Provider } from "@/provider";
 
 export const metadata: Metadata = {
   title: "iGame Assignment",
@@ -17,7 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <AuthCheck>{children}</AuthCheck>
+        <Provider>
+          <AuthCheck>{children}</AuthCheck>
+        </Provider>
       </body>
     </html>
   );

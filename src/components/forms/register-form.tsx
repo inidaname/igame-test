@@ -1,10 +1,13 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+
+import axios from "axios";
+import { useRouter } from "next/navigation";
 
 import Button from "@/components/button";
 import FormField from "@/components/form-field";
-import axios from "axios";
+import { UserContext } from "@/provider";
 import { setSessionToken } from "@/utils/session-manager";
 
 const RegisterForm: React.FC = () => {
@@ -12,6 +15,7 @@ const RegisterForm: React.FC = () => {
     username: "",
   });
 
+  const router = useRouter();
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
@@ -19,6 +23,9 @@ const RegisterForm: React.FC = () => {
     const { value } = event.target;
     setFormData({ username: value });
   };
+  const {
+    userData: { setUserData },
+  } = useContext(UserContext);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -33,6 +40,8 @@ const RegisterForm: React.FC = () => {
 
       setSuccess(response.data.message);
       setSessionToken(response.data.token);
+      setUserData(response.data.data);
+      router.replace("/");
       setFormData({ username: "" });
     } catch (err: any) {
       setError(err.response?.data?.message || "Registration failed");
