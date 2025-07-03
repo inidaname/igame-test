@@ -30,7 +30,7 @@ const PickNumberForm: React.FC = () => {
   const handleSubmit = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:3001/games",
+        `${process.env.API_URL}/games`,
         {
           selectedNumber: formValue,
         },

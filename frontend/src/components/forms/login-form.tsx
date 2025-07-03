@@ -35,7 +35,7 @@ const LoginForm: React.FC = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3001/login",
+        `${process.env.API_URL}/login`,
         formData
       );
 
