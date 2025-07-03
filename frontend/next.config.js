@@ -5,7 +5,7 @@ const nextConfig = {
 };
 
 function getEnvConfig() {
-  const environment = process.env.TARGET_ENV || process.env.NODE_ENV;
+  const environment = process.env.NODE_ENV;
   try {
     return require(`./env-${environment}.json`);
   } catch (err) {
