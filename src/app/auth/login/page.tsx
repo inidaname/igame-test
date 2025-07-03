@@ -1,8 +1,9 @@
 import React from "react";
 
 import { NextPage } from "next";
-import FormField from "@/components/form-field";
+
 import Button from "@/components/button";
+import FormField from "@/components/form-field";
 
 const Page: NextPage = () => {
   return (
