@@ -1,3 +1,4 @@
 {
-  "NEXT_PUBLIC_SESSION_TOKEN": "igame-test-dev"
+  "NEXT_PUBLIC_SESSION_TOKEN": "igame-test-dev",
+  "API_URL": "https://igame-api.onrender.com"
 }
