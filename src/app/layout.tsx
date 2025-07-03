@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+import AuthCheck from "@/components/auth-check";
+
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "iGame Assignment",
@@ -16,7 +16,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>
+        <AuthCheck>{children}</AuthCheck>
+      </body>
     </html>
   );
 }

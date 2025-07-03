@@ -1,10 +1,10 @@
 import React from "react";
 
-interface Props {
+interface Props extends InputProps {
   label?: string;
 }
 
-const FormField: React.FC<Props> = ({ label }) => {
+const FormField: React.FC<Props> = ({ label, ...props }) => {
   return (
     <div className="w-full border rounded-md p-4 flex flex-col space-y-2">
       {label && (
@@ -16,6 +16,7 @@ const FormField: React.FC<Props> = ({ label }) => {
         type="text"
         id={label}
         className="border border-zinc-400 rounded-md py-3 px-3"
+        {...props}
       />
     </div>
   );
