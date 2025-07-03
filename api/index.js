@@ -1,6 +1,9 @@
 import express from "express"
 import routes from "./routes/index.js";
 import morgan from "morgan";
+import dotenv from "dotenv"
+
+dotenv.config({ path: ".env" })
 
 const app = express();
 const port = process.env.PORT;
